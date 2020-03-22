@@ -1,0 +1,20 @@
+makeCacheMatrix <- function(a=matrix())
+{invrr <- NULL
+set <- function(y){
+a <<- y
+invrr <<- NULL}
+get <- function()a
+setinverse <- function(inverse)invrr<<-inverse
+getinverse <- function()invrr
+list(set=set,get=get,setinverse=setinverse,getinverse=getinverse)}
+
+
+cacheSolve <- function(a,...)
+{
+invrr <- n$getinverse()
+if(!is.null(invrr)){
+message("gettingcachedata")return(invrr)}
+data <- a$get()
+invrr <- solve(data)
+a$setinverse(invrr)
+invrr}
